@@ -1,13 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { MyContextProvider } from './context/taskContext';
+import DisplayList from './components/displayList';
+import DenseAppBar from './components/header';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-     Task-Management 
-      </header>
-    </div>
+    <>
+      <DenseAppBar  text = {'Task Management'}></DenseAppBar>
+      <MyContextProvider>
+        <DisplayList></DisplayList>
+      </MyContextProvider>
+      <DenseAppBar></DenseAppBar>
+    </>
   );
 }
 
